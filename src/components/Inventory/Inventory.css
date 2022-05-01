@@ -1,0 +1,15 @@
+.borderClass{
+    border-left: 6px double #A32E94;
+    border-right: 6px double #A32E94;
+    padding: 0px 10px;
+}
+.button{
+    background-color: #061118;
+    color: #FFFF;
+    border: none;
+}
+.button:hover{
+    background-color: #A32E94;
+    color: #FFFF;
+    border: none;
+}

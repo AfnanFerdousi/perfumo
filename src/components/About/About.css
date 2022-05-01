@@ -1,0 +1,12 @@
+.bg-image {
+    background-image: url("../../images/1.svg");
+    background-size: cover;
+    /* height: 50vh; */
+    width: 100vw; 
+    background-repeat:no-repeat; 
+  }
+  .borderClass{
+    border-left: 6px double #A32E94;
+    border-right: 6px double #A32E94;
+    padding: 0px 10px;
+}

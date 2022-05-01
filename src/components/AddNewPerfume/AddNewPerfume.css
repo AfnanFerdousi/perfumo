@@ -1,0 +1,27 @@
+.perfume{
+    margin: 0 auto;
+    width: 50%;
+}
+.perfume input:not([type=checkbox]){
+    display: block;
+    width: 100%;
+    height: 40px;
+    border-radius: 5px;
+    border: 1px solid lightgray;
+    padding-left: 10px;
+    font-size: 16px;
+    margin-bottom: 15px;
+}
+.text-purple{
+    color: #A32E94;
+}
+.button{
+    background-color: #061118;
+    color: #FFFF;
+    border: none;
+}
+.button:hover{
+    background-color: #A32E94;
+    color: #FFFF;
+    border: none;
+}
