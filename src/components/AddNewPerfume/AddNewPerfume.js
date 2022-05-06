@@ -10,7 +10,7 @@ const AddNewPerfume = () => {
     const {register, handleSubmit} = useForm()
     console.log(user)
     const onSubmit = event =>{
-        fetch('http://localhost:5000/item', {
+        fetch('https://arcane-retreat-77656.herokuapp.com/item', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
@@ -20,21 +20,22 @@ const AddNewPerfume = () => {
         .then(res => res.json())
         .then(data =>{
             alert('Perfume added successfully!!!');
+            window.location.reload(false)
         })
-        window.location.reload(false)
+        
     }
     return (
         <div className='perfume'>
             <h3 className=' my-5 text-center'>Add New Perfume In <span className='text-purple'>PERFUMO</span></h3>
             <form onSubmit={handleSubmit(onSubmit)}>
-                <input type="text" name="name" {...register("name", {required: true})} id="" placeholder='Perfume Name'/>
-                <input {...register("email", {required: true})} type="email" name="email" value={user.email} id="" placeholder='Email' readOnly/>
+                <input type="text" name="name" {...register("name")} id="" required placeholder='Perfume Name'/>
+                <input {...register("email", {required: true})} type="email" required name="email" value={user.email} id="" placeholder='Email' readOnly/>
                 <input type="text" name="perfume" {...register("perfume", {required: true})} id="" placeholder='Perfume Image'/>
-                <input type="text" name="desc" {...register("desc", {required: true})} id="" placeholder='Perfume Description'/>
+                <input type="text" name="desc" {...register("desc", {required: true})} id="" placeholder='Perfume Description' required/>
                 
-                <input {...register("price", {required: true})} type="number" name="price" id="" placeholder='$$$'/>
-                <input {...register("quantity", {required: true})} type="number" name="quantity" id="" placeholder='Quantity'/>
-                <input {...register("seller", {required: true})} type="type" name="seller" id="" placeholder='Seller'/>
+                <input {...register("price", {required: true})} type="number" name="price" id="" placeholder='$$$' required/>
+                <input {...register("quantity", {required: true})} type="number" name="quantity" id="" placeholder='Quantity' required/>
+                <input {...register("seller", {required: true})} type="type" name="seller" id="" placeholder='Seller' required/>
                 <input onClick={() => setAgree(!agree)} type="checkbox" name="terms" id="terms" />
                 <label className={`ps-2 ${agree ? '' : 'text-danger'}`} htmlFor="terms">Accept Perfumo's Terms and Conditions</label>
                 <input

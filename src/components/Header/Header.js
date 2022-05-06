@@ -21,33 +21,32 @@ const Header = () => {
 
     return (
 
-        <Navbar collapseOnSelect className="header" expand="lg" bg="dark" variant="dark">
+        <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
             <Container>
                 <LinkContainer to="/">
                     <Navbar.Brand href="/">
-                        <img style={{width: "65%"}} className='' alt='logo' src={logo} />
+                        <img style={{width: "55%"}} className='' alt='logo' src={logo} />
                     </Navbar.Brand>
                 </LinkContainer>
                 <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                 <Navbar.Collapse id="responsive-navbar-nav">
                     <Nav className="ms-auto">
                         <LinkContainer to="/">
-                            <Nav.Link className="navItem">Home</Nav.Link>
+                            <Nav.Link >Home</Nav.Link>
                         </LinkContainer>
-
                         <LinkContainer to="/inventory">
-                            <Nav.Link className="navItem">Inventory</Nav.Link>
+                            <Nav.Link >Inventory</Nav.Link>
                         </LinkContainer>
                         <LinkContainer to="/blogs">
-                            <Nav.Link className="navItem">Blogs</Nav.Link>
+                            <Nav.Link >Blogs</Nav.Link>
                         </LinkContainer>
                         <LinkContainer to="/awards">
-                            <Nav.Link className="navItem">Awards</Nav.Link>
+                            <Nav.Link >Awards</Nav.Link>
                         </LinkContainer>
                         {
                             user && <>
                                 <LinkContainer to="/myitem">
-                                    <Nav.Link className="navItem">My Items</Nav.Link>
+                                    <Nav.Link >My Items</Nav.Link>
                                 </LinkContainer>
                             </>
                         }

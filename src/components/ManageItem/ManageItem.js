@@ -11,7 +11,7 @@ const ManageItem = () => {
         event.preventDefault();
         const quantity = item.quantity - 1;
         const updatedQuantity = {quantity};
-        const url = `http://localhost:5000/item/${itemId}`
+        const url = `https://arcane-retreat-77656.herokuapp.com/item/${itemId}`
         
         fetch(url, {
             method: 'PUT',
@@ -22,10 +22,9 @@ const ManageItem = () => {
         })
         .then(res => res.json())
         .then(data =>{
-            console.log('success', data);
             alert('Item Delivered Successfully!!!');
+            window.location.reload(false)
         })
-        window.location.reload(false)
     }
 
     const handleRestockButton = event =>{
@@ -35,7 +34,7 @@ const ManageItem = () => {
         event.preventDefault();    
 
         const updatedQuantity = {quantity};
-        const url = `http://localhost:5000/item/${itemId}`
+        const url = `https://arcane-retreat-77656.herokuapp.com/item/${itemId}`
         fetch(url, {
             method: 'PUT',
             headers: {
@@ -47,17 +46,18 @@ const ManageItem = () => {
         .then(data =>{
             console.log('success', data);
             alert('Item Restocked Successfully!!!');
+            window.location.reload(false)
         })
-        window.location.reload(false)
+        
     }
     // console.log(item)
     return (
         <div className='container d-flex text-center justify-content-center row'>
         <div className='offset-2 col-md-4 card my-5'>            
             <h2>{item.name}</h2>
-            <h5>{item.price}</h5>
-            <h5>{item.quantity}</h5>
-            <h5>{item._id}</h5>  
+            <h5 className='text-primary'>${item.price}</h5>
+            <h5>Quantity: {item.quantity}</h5>
+            <h6>Item Id:{item._id}</h6>  
             <img src={item.img || item.perfume} alt="perfume"/>             
         </div>
         <div className='offset-2 col-md-4 card my-5'>

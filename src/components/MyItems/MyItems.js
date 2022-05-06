@@ -14,7 +14,7 @@ const MyItems = () => {
     useEffect(() => {
         const getItems = async () => {
             const email = user.email
-            const url = `http://localhost:5000/myitem?email=${email}`
+            const url = `https://arcane-retreat-77656.herokuapp.com/myitem?email=${email}`
 
             try {
                 const { data } = await axiosPrivate.get(url);

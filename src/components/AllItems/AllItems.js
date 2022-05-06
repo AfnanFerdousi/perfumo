@@ -10,7 +10,7 @@ const AllItems = (allItem) => {
     }
 
     useEffect(() => {
-        fetch('http://localhost:5000/item')
+        fetch('https://arcane-retreat-77656.herokuapp.com/item')
         .then(res => res.json())
         .then(data => setItem(data))
     },[])
@@ -20,7 +20,7 @@ const AllItems = (allItem) => {
         const proceed = window.confirm("Are You Sure You Want To Delete This Item?");
 
         if(proceed){
-            const url = `http://localhost:5000/item/${id}`;
+            const url = `https://arcane-retreat-77656.herokuapp.com/item/${id}`;
             fetch(url, {
                 method: 'DELETE'
             })
@@ -31,8 +31,9 @@ const AllItems = (allItem) => {
                     console.log(data)
                     setItem(remaining)
                 }
+                window.location.reload(false)
             })
-            window.location.reload(false)
+            
         }
     }
     return (
